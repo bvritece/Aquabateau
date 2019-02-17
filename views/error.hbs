@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        	<link rel="stylesheet" href="/css/bootstrap.css" />
+          <link rel="stylesheet" href="/css/style.css" />
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+          <link href="/c3/c3.css" rel="stylesheet">
+          <script src="/c3/d3.v3.min.js" charset="utf-8"></script>
+          <script src="/c3/c3.min.js"></script>
+    
+
+    </head>
+<body>
+
+	<div class="container">
+      <div class="header clearfix">
+        
+        {{#if customer}}
+              <a href="/customer/logout">logout</a>
+        {{else}}
+        
+        <nav>
+          
+            <div class="dropdown left1">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Customer
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/customer/login">Login</a></li>
+                <li><a href="/customer/register">Register</a></li>
+              </ul>
+            </div>
+            <div class="dropdown left2">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Merchent
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/merchent/login">Login</a></li>
+                <li><a href="/merchent/register">Register</a></li>
+              </ul>
+            </div>
+            <div class="dropdown left3">
+              <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Driver
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li><a href="/driver/login">Login</a></li>
+                <li><a href="/driver/register">Register</a></li>
+              </ul>
+            </div>
+          
+        </nav>
+        
+        {{/if}}
+      </div>
+
+
+      <div class="row">
+        <div class="col-lg-12">
+          {{#if success_msg}}
+            <div class="alert alert-success">{{success_msg}}</div>
+          {{/if}}
+
+          {{#if error_msg}}
+            <div class="alert alert-danger">{{error_msg}}</div>
+          {{/if}}
+
+          {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+          {{/if}}
+
+          {{{body}}}
+        </div>
+
+
+    </div>
+
+
+    </div> <!-- /container -->
+</body>
+
+</html>
